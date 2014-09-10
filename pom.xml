@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.psych</groupId>
+	<groupId>com</groupId>
 	<artifactId>mongoimporter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -14,6 +14,18 @@
 			<version>2.12.1</version>
 		</dependency>
 	</dependencies>
+
+	<scm>
+	    <connection>scm:git:https://github.com/samarthbhargav/mongotools.git</connection>
+	</scm>
+
+	<distributionManagement>
+	    <repository>
+	        <id>artifact-repository</id>
+	        <url>https://github.com/samarthbhargav/mongotools.git</url>
+	    </repository>
+	</distributionManagement>
+
 
 	<build>
 		<plugins>
@@ -52,6 +64,18 @@
 					</transformers>
 				</configuration>
 			</plugin>
+			<plugin>
+		            <groupId>org.codehaus.mojo</groupId>
+		            <artifactId>versions-maven-plugin</artifactId>
+		            <version>2.1</version>
+		        </plugin>
+		        <plugin>
+		            <artifactId>maven-scm-plugin</artifactId>
+		            <version>1.8.1</version>
+		            <configuration>
+		                <tag>${project.artifactId}-${project.version}</tag>
+		            </configuration>
+		        </plugin>
 		</plugins>
 	</build>
 
